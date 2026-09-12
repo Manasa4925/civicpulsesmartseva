@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CivicPulse SmartSeva AI</title>
+
+  <meta
+    name="description"
+    content="CivicPulse SmartSeva AI helps citizens access public services, report issues, and track resolutions faster."
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       1. LOADING SCREEN
+       ===================================================== -->
+
+  <section
+    class="loading-screen"
+    id="loadingScreen"
+    aria-label="Loading CivicPulse"
+    aria-live="polite"
+  >
+
+    <div class="loading-content">
+
+      <div class="loader-mosaic" aria-hidden="true">
+
+        <span class="mosaic-tile tile-one"></span>
+        <span class="mosaic-tile tile-two"></span>
+        <span class="mosaic-tile tile-three"></span>
+        <span class="mosaic-tile tile-four"></span>
+        <span class="mosaic-tile tile-five"></span>
+        <span class="mosaic-tile tile-six"></span>
+        <span class="mosaic-tile tile-seven"></span>
+        <span class="mosaic-tile tile-eight"></span>
+        <span class="mosaic-tile tile-nine"></span>
+
+        <span class="mosaic-finish"></span>
+
+      </div>
+
+
+      <div class="loading-brand">
+
+        <strong>
+          CPSS<span>-AI</span>
+        </strong>
+
+        <p>
+          Civic Pulse Smart Seva AI
+        </p>
+
+      </div>
+
+
+      <div
+        class="loading-graph"
+        aria-label="Civic activity chart"
+        role="img"
+      >
+
+        <span class="graph-bar graph-bar-one"></span>
+        <span class="graph-bar graph-bar-two"></span>
+        <span class="graph-bar graph-bar-three"></span>
+        <span class="graph-bar graph-bar-four"></span>
+        <span class="graph-bar graph-bar-five"></span>
+        <span class="graph-bar graph-bar-six"></span>
+
+      </div>
+
+
+      <div
+        class="loading-progress"
+        aria-hidden="true"
+      >
+        <span></span>
+      </div>
+
+
+      <p class="loading-status">
+        Preparing your civic dashboard
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       2. TOP NAVIGATION
+       Hidden until successful login
+       ===================================================== -->
+
+  <header class="topbar">
+
+    <div class="container nav-wrap">
+
+      <!-- Brand -->
+
+      <div class="brand">
+
+        <span class="brand-mark">
+          CP
+        </span>
+
+        <div>
+
+          <h1>
+            CivicPulse
+          </h1>
+
+          <small>
+            SmartSeva AI
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- Navigation -->
+
+      <nav
+        class="main-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#complaints">
+          Complaints
+        </a>
+
+        <a href="#track">
+          Track
+        </a>
+
+        <a href="#assistant">
+          AI Assistant
+        </a>
+
+      </nav>
+
+
+    </div>
+
+  </header>
+
+
+  <a
+    class="assistant-launcher"
+    href="#assistant"
+    aria-label="Open SmartSeva AI chat"
+    title="Open SmartSeva AI chat"
+  >
+    <span aria-hidden="true">✦</span>
+    AI Chat
+  </a>
+
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         3. LOGIN / SIGN UP
+         Initially hidden.
+         Loading screen finishes first.
+         =================================================== -->
+
+    <section
+      class="login-overlay"
+      id="loginPanel"
+      aria-labelledby="loginTitle"
+      hidden
+    >
+
+      <div class="login-shell">
+
+
+        <!-- LEFT LOGIN INTRO -->
+
+        <div class="login-intro">
+
+          <div class="login-back">
+
+            <strong>
+              CPSSAI
+            </strong>
+
+            <span>
+              Civic Pulse Smart Seva AI
+            </span>
+
+          </div>
+
+
+          <div
+            class="login-visual"
+            aria-label="Civic request activity preview"
+            role="img"
+          >
+
+            <div class="visual-heading">
+
+              <span>
+                City pulse
+              </span>
+
+              <strong>
+                84%
+              </strong>
+
+            </div>
+
+            <div class="visual-chart" aria-hidden="true">
+
+              <span class="visual-bar visual-bar-one"></span>
+              <span class="visual-bar visual-bar-two"></span>
+              <span class="visual-bar visual-bar-three"></span>
+              <span class="visual-bar visual-bar-four"></span>
+              <span class="visual-bar visual-bar-five"></span>
+              <span class="visual-bar visual-bar-six"></span>
+
+            </div>
+
+            <div class="visual-statuses">
+
+              <span>
+                <i class="status-dot status-dot-blue"></i>
+                Submitted
+              </span>
+
+              <span>
+                <i class="status-dot status-dot-orange"></i>
+                In progress
+              </span>
+
+              <span>
+                <i class="status-dot status-dot-green"></i>
+                Resolved
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="login-intro-content">
+
+            <span class="eyebrow">
+              Your civic dashboard
+            </span>
+
+            <h2>
+              Pick up where you left off.
+            </h2>
+
+            <p>
+              Sign in to follow requests, save services,
+              and get help from SmartSeva AI in one place.
+            </p>
+
+
+            <ul class="login-benefits">
+
+              <li>
+
+                <strong>
+                  One clear view
+                </strong>
+
+                <span>
+                  See every complaint and update at a glance.
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Faster support
+                </strong>
+
+                <span>
+                  Keep your details ready for the right department.
+                </span>
+
+              </li>
+
+
+              <li>
+
+                <strong>
+                  Always informed
+                </strong>
+
+                <span>
+                  Get timely progress updates on active requests.
+                </span>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- RIGHT LOGIN CARD -->
+
+        <div class="login-card">
+
+
+          <div class="login-heading">
+
+            <p class="login-kicker">
+              Welcome back
+            </p>
+
+            <h2 id="loginTitle">
+              Sign in to CPSSAI
+            </h2>
+
+            <p>
+              Use your registered email to continue.
+            </p>
+
+          </div>
+
+
+
+          <!-- =========================
+               SIGN IN FORM
+               ========================= -->
+
+          <form
+            id="loginForm"
+            class="login-form"
+          >
+
+            <label for="loginEmail">
+              Email address
+            </label>
+
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+
+
+            <div class="password-label-row">
+
+              <label for="loginPassword">
+                Password
+              </label>
+
+              <a
+                href="#login"
+                onclick="showLoginNotice(event)"
+              >
+                Forgot password?
+              </a>
+
+            </div>
+
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+
+
+            <label class="remember-choice">
+
+              <input
+                type="checkbox"
+                id="rememberMe"
+              />
+
+              <span>
+                Keep me signed in
+              </span>
+
+            </label>
+
+
+            <button
+              class="primary login-submit"
+              type="submit"
+            >
+              Sign in
+            </button>
+
+
+            <p
+              class="login-message"
+              id="loginMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+
+          </form>
+
+
+
+          <!-- =========================
+               SIGN UP FORM
+               ========================= -->
+
+          <form
+            id="signupForm"
+            class="login-form"
+            hidden
+          >
+
+            <label for="signupName">
+              Full name
+            </label>
+
+            <input
+              type="text"
+              id="signupName"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+            />
+
+
+            <label for="signupEmail">
+              Email address
+            </label>
+
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+
+
+            <label for="signupPassword">
+              Create password
+            </label>
+
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            />
+
+
+            <label for="signupConfirmPassword">
+              Confirm password
+            </label>
+
+            <input
+              type="password"
+              id="signupConfirmPassword"
+              placeholder="Repeat your password"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            />
+
+
+            <button
+              class="primary login-submit"
+              id="createAccountButton"
+              type="submit"
+            >
+              Create account
+            </button>
+
+
+            <p
+              class="login-message"
+              id="signupMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+
+          </form>
+
+
+
+          <!-- SIGN UP LINK -->
+
+          <p
+            class="signup-prompt"
+            id="loginPrompt"
+          >
+            New to CPSSAI?
+
+            <a
+              href="#login"
+              onclick="showSignup(event)"
+            >
+              Create an account
+            </a>
+
+          </p>
+
+
+          <!-- SIGN IN LINK -->
+
+          <p
+            class="signup-prompt"
+            id="signupPrompt"
+            hidden
+          >
+            Already have an account?
+
+            <a
+              href="#login"
+              onclick="showSignin(event)"
+            >
+              Sign in
+            </a>
+
+          </p>
+
+
+          <p class="secure-note">
+            Your information is protected with secure sign-in.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         4. HOMEPAGE / HERO
+         Hidden until login
+         =================================================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div class="container hero-grid">
+
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-copy">
+
+          <span class="eyebrow">
+            Public services, simplified
+          </span>
+
+          <h2>
+            Smarter civic support for every citizen.
+          </h2>
+
+          <p>
+            Access essential public services, raise issues instantly,
+            and track resolutions with AI-powered guidance built for
+            faster action.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <button
+              class="primary"
+              onclick="getStarted()"
+            >
+              Report an Issue
+            </button>
+
+
+            <button
+              class="secondary"
+              onclick="scrollToSection('services')"
+            >
+              Explore Services
+            </button>
+
+          </div>
+
+
+          <ul class="trust-list">
+
+            <li>
+              24/7 AI assistance
+            </li>
+
+            <li>
+              Faster complaint resolution
+            </li>
+
+            <li>
+              Citizen-friendly dashboards
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <!-- HERO STATUS PANEL -->
+
+        <div class="hero-panel">
+
+          <div class="panel-card">
+
+            <div class="panel-header">
+
+              <span class="status-dot"></span>
+
+              <span>
+                Live service status
+              </span>
+
+            </div>
+
+
+            <div class="status-boxes">
+
+              <div>
+
+                <strong>
+                  1,284
+                </strong>
+
+                <span>
+                  Cases processed
+                </span>
+
+              </div>
+
+
+              <div>
+
+                <strong>
+                  92%
+                </strong>
+
+                <span>
+                  Solved this month
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div
+              class="mini-chart"
+              aria-hidden="true"
+            >
+
+              <span style="height: 40%"></span>
+              <span style="height: 60%"></span>
+              <span style="height: 45%"></span>
+              <span style="height: 80%"></span>
+              <span style="height: 95%"></span>
+              <span style="height: 75%"></span>
+              <span style="height: 100%"></span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         5. STATISTICS
+         =================================================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+        <div>
+
+          <strong>
+            12K+
+          </strong>
+
+          <span>
+            Citizens served
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            3 mins
+          </strong>
+
+          <span>
+            Average response time
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            48 cities
+          </strong>
+
+          <span>
+            Across the network
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            1 click
+          </strong>
+
+          <span>
+            To file a complaint
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         6. SERVICES
+         =================================================== -->
+
+    <section
+      class="services section"
+      id="services"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            What we offer
+          </span>
+
+          <h3>
+            Public services designed around your needs
+          </h3>
+
+        </div>
+
+
+        <div class="cards">
+
+
+          <article class="card">
+
+            <div class="icon">
+              🏥
+            </div>
+
+            <h4>
+              Health Services
+            </h4>
+
+            <p>
+              Book public health appointments and access guidance quickly.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <div class="icon">
+              💧
+            </div>
+
+            <h4>
+              Water Complaints
+            </h4>
+
+            <p>
+              Report leakages, supply issues, and service interruptions.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <div class="icon">
+              🛣️
+            </div>
+
+            <h4>
+              Road Issues
+            </h4>
+
+            <p>
+              Flag damaged roads, potholes, traffic hazards, and maintenance.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <div class="icon">
+              💡
+            </div>
+
+            <h4>
+              Electricity Support
+            </h4>
+
+            <p>
+              Submit outage complaints and track power restoration updates.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <div class="icon">
+              📄
+            </div>
+
+            <h4>
+              Certificates
+            </h4>
+
+            <p>
+              Track applications for residency, legal, and civic certificates.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <div class="icon">
+              🤖
+            </div>
+
+            <h4>
+              AI Assistant
+            </h4>
+
+            <p>
+              Get instant guidance, eligibility checks, and issue triaging.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         7. COMPLAINTS
+         =================================================== -->
+
+    <section
+      class="complaints section"
+      id="complaints"
+    >
+
+      <div class="container complaint-grid">
+
+
+        <div class="complaint-copy">
+
+          <span class="eyebrow">
+            Fast complaint filing
+          </span>
+
+          <h3>
+            Raise a problem in minutes, not days.
+          </h3>
+
+          <p>
+            Submit civic complaints with location details,
+            urgency level, and supporting notes. Our system
+            routes issues to the right department.
+          </p>
+
+
+          <ul>
+
+            <li>
+              Location-based issue routing
+            </li>
+
+            <li>
+              Department matching
+            </li>
+
+            <li>
+              Live resolution tracking
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <!-- COMPLAINT FORM -->
+
+        <form
+          class="complaint-form"
+          id="complaintForm"
+        >
+
+          <label>
+
+            Full Name
+
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
+
+          </label>
+
+
+          <label>
+
+            Service Type
+
+            <select
+              id="serviceType"
+              required
+            >
+
+              <option value="">
+                Select
+              </option>
+
+              <option>
+                Water
+              </option>
+
+              <option>
+                Road
+              </option>
+
+              <option>
+                Electricity
+              </option>
+
+              <option>
+                Health
+              </option>
+
+              <option>
+                Certificates
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <label>
+
+            Issue Details
+
+            <textarea
+              id="issue"
+              rows="4"
+              placeholder="Describe the problem"
+              required
+            ></textarea>
+
+          </label>
+
+
+          <button
+            type="submit"
+            class="primary submit-btn"
+          >
+            Submit Complaint
+          </button>
+
+          <a
+            class="complaint-home-link"
+            href="#home"
+            aria-label="Back to homepage"
+            title="Back to homepage"
+          >
+            ↑
+          </a>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         8. TRACK COMPLAINT
+         =================================================== -->
+
+    <section
+      class="track section"
+      id="track"
+    >
+
+      <div class="container track-box">
+
+
+        <div>
+
+          <span class="eyebrow">
+            Track progress
+          </span>
+
+          <h3>
+            Stay updated from filing to resolution.
+          </h3>
+
+        </div>
+
+
+        <div class="status-track">
+
+          <div class="step active">
+            Filed
+          </div>
+
+          <div
+            class="step active"
+            aria-current="step"
+          >
+            Verified
+          </div>
+
+          <div class="step">
+            Assigned
+          </div>
+
+          <div class="step">
+            Resolved
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         9. AI ASSISTANT
+         =================================================== -->
+
+    <section
+      class="assistant section"
+      id="assistant"
+    >
+
+      <div class="container assistant-grid">
+
+
+        <div class="assistant-copy">
+
+          <span class="eyebrow">
+            AI powered support
+          </span>
+
+          <h3>
+            Ask the civic assistant anything.
+          </h3>
+
+          <p>
+            Get quick help about service eligibility,
+            complaint steps, and the best next action
+            for your issue.
+          </p>
+
+        </div>
+
+
+
+        <!-- CHATBOT -->
+
+        <div
+          class="chatbot"
+          aria-live="polite"
+        >
+
+
+          <div class="chat-header">
+
+            <span class="status-pill">
+              Online
+            </span>
+
+            <strong>
+              SmartSeva AI
+            </strong>
+
+          </div>
+
+
+
+          <div
+            class="chat-messages"
+            id="chatMessages"
+          >
+
+            <div class="message bot">
+
+              Hi! I can help with water, roads,
+              electricity, and public service requests.
+
+            </div>
+
+
+            <div class="message user">
+
+              How do I report a road problem?
+
+            </div>
+
+
+            <div class="message bot">
+
+              Use the complaint form, select “Road,”
+              add the location, and describe the issue.
+              We’ll route it to the correct team.
+
+            </div>
+
+          </div>
+
+
+
+          <div class="chat-input-row">
+
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Ask about services or complaints..."
+            />
+
+            <button
+              id="sendChat"
+              aria-label="Send message"
+            >
+              Send
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       10. FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-wrap">
+
+      <p>
+        © 2026 CivicPulse SmartSeva AI
+      </p>
+
+
+      <div class="footer-links">
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#complaints">
+          Complaints
+        </a>
+
+        <a href="#assistant">
+          AI Assistant
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
