@@ -1431,17 +1431,23 @@ body.logged-in #loginPanel {
   font-weight: 700;
 }
 
-.remember-choice {
+.password-toggle {
   display: flex;
 
   align-items: center;
 
   gap: 8px;
 
-  margin: 4px 0 12px;
+  margin: -2px 0 4px;
+
+  color: #526074;
+
+  font-size: 0.84rem;
+
+  font-weight: 600;
 }
 
-.remember-choice input {
+.password-toggle input {
   accent-color: var(--navy);
 }
 

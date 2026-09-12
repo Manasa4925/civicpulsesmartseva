@@ -166,6 +166,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupForm =
     document.getElementById("signupForm");
 
+  const showLoginPassword =
+    document.getElementById("showLoginPassword");
+
+  const loginPassword =
+    document.getElementById("loginPassword");
+
+
+  if (showLoginPassword && loginPassword) {
+
+    showLoginPassword.addEventListener("change", () => {
+      loginPassword.type =
+        showLoginPassword.checked ? "text" : "password";
+    });
+
+  }
+
   // ==========================================
   // LOADING SCREEN → LOGIN
   // ==========================================
@@ -223,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       const email =
-        document.getElementById("loginEmail").value.trim();
+        document.getElementById("loginEmail").value.trim().toLowerCase();
 
       const password =
         document.getElementById("loginPassword").value;
@@ -231,10 +247,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const message =
         document.getElementById("loginMessage");
 
-      const account =
-        JSON.parse(
+      let account = null;
+
+      try {
+        account = JSON.parse(
           localStorage.getItem("cpssaiAccount") || "null"
         );
+      } catch (error) {
+        localStorage.removeItem("cpssaiAccount");
+      }
 
 
       // Empty fields
@@ -246,14 +267,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      if (!email.endsWith("@gmail.com")) {
+        message.textContent =
+          "Please use a Gmail address ending with @gmail.com.";
+
+        return;
+      }
+
 
       // Check saved account
       if (
-        account &&
-        (
-          account.email !== email ||
-          account.password !== password
-        )
+        !account ||
+        account.email !== email ||
+        account.password !== password
       ) {
 
         message.textContent =
@@ -299,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("signupName").value.trim();
 
       const email =
-        document.getElementById("signupEmail").value.trim();
+        document.getElementById("signupEmail").value.trim().toLowerCase();
 
       const password =
         document.getElementById("signupPassword").value;
@@ -311,6 +337,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const message =
         document.getElementById("signupMessage");
+
+      if (!email.endsWith("@gmail.com")) {
+        message.textContent =
+          "Please use a Gmail address ending with @gmail.com.";
+
+        return;
+      }
 
       // Password check
       if (password !== confirmPassword) {
