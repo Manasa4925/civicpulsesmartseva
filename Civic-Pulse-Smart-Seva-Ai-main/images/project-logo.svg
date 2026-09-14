@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Civic Pulse Smart Seva logo</title>
+  <desc id="desc">Civic Pulse Smart Seva logo with people, civic service, and Indian community imagery.</desc>
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0878bd"/>
+      <stop offset=".5" stop-color="#20a65a"/>
+      <stop offset="1" stop-color="#f7941d"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#1684c6"/>
+      <stop offset="1" stop-color="#075092"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#42a947"/>
+      <stop offset="1" stop-color="#087b43"/>
+    </linearGradient>
+  </defs>
+  <circle cx="400" cy="400" r="377" fill="#fff" stroke="url(#ring)" stroke-width="22"/>
+  <path d="M55 540 Q400 470 745 540 V660 Q400 590 55 660Z" fill="#edf5f9"/>
+  <g fill="#bfd0da" opacity=".9">
+    <path d="M92 503h52v-55h15v-25h18v25h15v55h24v-38h25v38h28v-65h15v-23h18v23h15v65h28v-45h20v45z"/>
+    <path d="M505 503h22v-50h13v-18h16v18h13v50h26v-67h15v-28h18v28h15v67h23v-48h20v48h25v-76h15v-21h17v21h15v76z"/>
+  </g>
+  <path d="M270 395 L400 285 530 395 490 430 400 350 310 430Z" fill="url(#blue)"/>
+  <path d="M293 390h214v118H293z" fill="#0b4b85"/>
+  <g fill="#fff"><path d="M315 405h16v91h-16zM350 405h16v91h-16zM385 405h16v91h-16zM420 405h16v91h-16zM455 405h16v91h-16z"/></g>
+  <path d="M400 285v-49" stroke="#f7941d" stroke-width="7"/>
+  <path d="M400 237q27-9 46 8-24 13-46 0Z" fill="#f7941d"/>
+  <path d="M400 455 C337 540 227 520 155 450 238 458 286 425 315 365 335 395 363 425 400 455Z" fill="url(#green)" opacity=".95"/>
+  <path d="M400 455 C463 540 573 520 645 450 562 458 514 425 485 365 465 395 437 425 400 455Z" fill="url(#blue)" opacity=".95"/>
+  <g stroke="#075092" stroke-width="14" fill="none" stroke-linecap="round">
+    <path d="M337 125q63-63 126 0"/><path d="M365 153q35-35 70 0"/>
+  </g>
+  <circle cx="400" cy="181" r="22" fill="#075092"/>
+  <path d="M365 208q35-30 70 0" fill="#075092"/>
+  <circle cx="258" cy="220" r="32" fill="#f7941d"/>
+  <path d="M190 316q68-85 132-10l-16 45-97-2Z" fill="#f7941d"/>
+  <circle cx="542" cy="220" r="32" fill="#43a947"/>
+  <path d="M478 306q68-75 132 10l-19 33-97 2Z" fill="#43a947"/>
+  <text x="400" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="71" font-weight="800" fill="#075092">CIVIC <tspan fill="#16834b">PULSE</tspan></text>
+  <path d="M218 638h364" stroke="#075092" stroke-width="5"/>
+  <text x="400" y="683" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="8" fill="#075092">SMART SEVA</text>
+  <path d="M292 713q108-43 216 0-108 24-216 0Z" fill="#f7941d"/>
+</svg>

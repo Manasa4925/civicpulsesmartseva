@@ -172,6 +172,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginPassword =
     document.getElementById("loginPassword");
 
+  const issueInput =
+    document.getElementById("issue");
+
+  const voiceBtn =
+    document.getElementById("voiceBtn");
+
+  const voiceStatus =
+    document.getElementById("voiceStatus");
+
+  const locationInput =
+    document.getElementById("location");
+
+  const locationBtn =
+    document.getElementById("locationBtn");
+
+  const locationStatus =
+    document.getElementById("locationStatus");
+
 
   if (showLoginPassword && loginPassword) {
 
@@ -180,6 +198,83 @@ document.addEventListener("DOMContentLoaded", () => {
         showLoginPassword.checked ? "text" : "password";
     });
 
+  }
+
+  if (voiceBtn && issueInput && voiceStatus) {
+
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      voiceBtn.disabled = true;
+      voiceStatus.textContent =
+        "Voice input is not supported in this browser.";
+    } else {
+      const recognition = new SpeechRecognition();
+
+      recognition.lang = "en-IN";
+      recognition.interimResults = false;
+      recognition.continuous = false;
+
+      voiceBtn.addEventListener("click", () => {
+        voiceStatus.textContent = "Listening... describe the issue.";
+        voiceBtn.classList.add("is-listening");
+        recognition.start();
+      });
+
+      recognition.addEventListener("result", (event) => {
+        const transcript = event.results[0][0].transcript;
+        issueInput.value = issueInput.value
+          ? `${issueInput.value} ${transcript}`
+          : transcript;
+        voiceStatus.textContent = "Voice description added.";
+      });
+
+      recognition.addEventListener("error", () => {
+        voiceStatus.textContent =
+          "Voice input was not available. You can type the issue instead.";
+      });
+
+      recognition.addEventListener("end", () => {
+        voiceBtn.classList.remove("is-listening");
+      });
+    }
+  }
+
+  if (locationBtn && locationInput && locationStatus) {
+
+    locationBtn.addEventListener("click", () => {
+
+      if (!navigator.geolocation) {
+        locationStatus.textContent =
+          "Location is not supported. Please enter it manually.";
+        return;
+      }
+
+      locationBtn.disabled = true;
+      locationStatus.textContent = "Finding your location...";
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude.toFixed(6);
+          const longitude = position.coords.longitude.toFixed(6);
+
+          locationInput.value = `${latitude}, ${longitude}`;
+          locationStatus.textContent = "Current location added.";
+          locationBtn.disabled = false;
+        },
+        () => {
+          locationStatus.textContent =
+            "Unable to access location. Please enter it manually.";
+          locationBtn.disabled = false;
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0
+        }
+      );
+    });
   }
 
   // ==========================================
@@ -408,8 +503,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const issue =
         document.getElementById("issue").value.trim();
 
+      const location =
+        document.getElementById("location").value.trim();
 
-      if (!name || !serviceType || !issue) {
+
+      if (!name || !serviceType || !issue || !location) {
 
         alert(
           "Please complete all fields before submitting your complaint."

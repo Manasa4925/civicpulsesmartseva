@@ -116,6 +116,18 @@ img {
   gap: 12px;
 }
 
+.brand-logo {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 8px 24px rgba(47, 125, 246, 0.22);
+}
+
 .brand-mark {
   width: 48px;
   height: 48px;
@@ -147,13 +159,25 @@ img {
 .brand h1 {
   margin: 0;
 
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+
+  font-weight: 800;
+
+  line-height: 1.05;
 
   color: var(--white);
 }
 
 .brand small {
   color: #9db7d9;
+
+  display: block;
+
+  font-size: 0.92rem;
+
+  font-weight: 800;
+
+  line-height: 1.15;
 
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -646,11 +670,14 @@ body.logged-in #loginPanel {
   border-radius: 26px;
 
   background:
-    url("https://images.openai.com/static-rsc-4/RoELd8bitwcOecuJgIFNKOI9_N8wFSfpoOQshfm5-anLT3JGMA8gH0NY9EybdvxsubRyIaRiT1sBNgRyuEU5teNMOvdDlSZACvEoIXK7ZsaKzIVcpyT0FHzswb7lU_wWJCafH29alLbBO1ppVPE12Ai4uKbhgDHz2Eoni8172EY?purpose=inline")
-    center / cover;
+    #ffffff url("images/project-logo.svg") center / contain no-repeat;
 
   animation:
     finish-reveal 2.8s ease-in-out infinite;
+}
+
+.mosaic-finish::after {
+  background: transparent;
 }
 
 
@@ -1781,6 +1808,93 @@ body.logged-in #loginPanel {
   padding: 86px 0;
 }
 
+.team {
+  padding-top: 54px;
+  padding-bottom: 42px;
+}
+
+.team-heading {
+  max-width: 680px;
+}
+
+.team-heading h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.team-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.team-card {
+  position: relative;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+
+  min-height: 128px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(141, 190, 255, 0.62);
+}
+
+.team-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 16px;
+
+  height: 3px;
+
+  border-radius: 0 0 6px 6px;
+
+  background: linear-gradient(90deg, var(--orange), var(--blue));
+}
+
+.team-card-copy {
+  padding: 28px 18px 20px;
+}
+
+.team-card h4 {
+  margin: 0 0 6px;
+
+  color: #ffffff;
+
+  font-size: 1rem;
+}
+
+.team-card p {
+  margin: 0;
+
+  color: #b8c9df;
+
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
 .section-heading {
   margin-bottom: 28px;
 }
@@ -1983,6 +2097,100 @@ body.logged-in #loginPanel {
   background: #f7faff;
 
   color: #08162e;
+}
+
+.issue-input-wrap,
+.location-input-wrap {
+  position: relative;
+
+  display: block;
+}
+
+.issue-input-wrap textarea {
+  padding-right: 58px;
+}
+
+.voice-btn,
+.location-btn {
+  border: 1px solid rgba(18, 61, 142, 0.18);
+
+  background: #eaf4ff;
+
+  color: #123d8e;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.voice-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  display: grid;
+  width: 38px;
+  height: 38px;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  font-size: 1.05rem;
+}
+
+.location-btn {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 10px;
+  padding: 10px 13px;
+
+  border-radius: 10px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.voice-btn:hover,
+.voice-btn:focus-visible,
+.location-btn:hover,
+.location-btn:focus-visible,
+.voice-btn.is-listening {
+  background: #123d8e;
+
+  color: #ffffff;
+
+  box-shadow: 0 8px 18px rgba(18, 61, 142, 0.2);
+
+  transform: translateY(-2px);
+}
+
+.voice-btn:disabled,
+.location-btn:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+}
+
+.voice-status,
+.location-status {
+  display: block;
+
+  min-height: 1.2em;
+
+  margin-top: 6px;
+
+  color: #64748b;
+
+  font-size: 0.78rem;
+  font-weight: 500;
 }
 
 .complaint-form select option {
@@ -2358,7 +2566,8 @@ body.logged-in #loginPanel {
   .hero-grid,
   .complaint-grid,
   .assistant-grid,
-  .track-box {
+  .track-box,
+  .team-grid {
     grid-template-columns: 1fr;
 
     display: grid;
@@ -2400,7 +2609,8 @@ body.logged-in #loginPanel {
   .stats-grid,
   .cards,
   .complaint-grid,
-  .assistant-grid {
+  .assistant-grid,
+  .team-grid {
     grid-template-columns: 1fr;
   }
 

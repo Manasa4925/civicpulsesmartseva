@@ -118,6 +118,12 @@
 
       <div class="brand">
 
+        <img
+          class="brand-logo"
+          src="images/project-logo.svg"
+          alt="Civic Pulse Smart Seva logo"
+        />
+
         <span class="brand-mark">
           CP
         </span>
@@ -576,7 +582,70 @@
 
 
     <!-- ===================================================
-         4. HOMEPAGE / HERO
+         4. PROJECT TEAM
+         Hidden until login
+         =================================================== -->
+
+    <section
+      class="team section"
+      id="team"
+    >
+
+      <div class="container">
+
+        <div class="section-heading team-heading">
+
+          <span class="eyebrow">
+            Meet the team
+          </span>
+
+          <h3>
+            The people behind CivicPulse SmartSeva AI.
+          </h3>
+
+        </div>
+
+
+        <div class="team-grid">
+
+          <article class="team-card">
+            <div class="team-card-copy">
+              <h4>Katteboyina Divya</h4>
+              <p>Backend Developer</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card-copy">
+              <h4>Guntanala Sivani</h4>
+              <p>AI &amp; ML Developer</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card-copy">
+              <h4>Kedam Saraswati</h4>
+              <p>Research and Presentation</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card-copy">
+              <h4>Kola Deepika</h4>
+              <p>Frontend Developer</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         5. HOMEPAGE / HERO
          Hidden until login
          =================================================== -->
 
@@ -1038,12 +1107,67 @@
 
             Issue Details
 
-            <textarea
-              id="issue"
-              rows="4"
-              placeholder="Describe the problem"
-              required
-            ></textarea>
+            <span class="issue-input-wrap">
+
+              <textarea
+                id="issue"
+                rows="4"
+                placeholder="Describe the problem"
+                required
+              ></textarea>
+
+              <button
+                type="button"
+                class="voice-btn"
+                id="voiceBtn"
+                aria-label="Describe complaint using voice"
+                title="Describe complaint using voice"
+              >
+                <span aria-hidden="true">🎙</span>
+              </button>
+
+            </span>
+
+            <span
+              class="voice-status"
+              id="voiceStatus"
+              aria-live="polite"
+            >
+              Tap the microphone to describe the issue.
+            </span>
+
+          </label>
+
+
+          <label>
+
+            Location
+
+            <span class="location-input-wrap">
+
+              <input
+                type="text"
+                id="location"
+                placeholder="Enter location or use current location"
+                required
+              />
+
+              <button
+                type="button"
+                class="location-btn"
+                id="locationBtn"
+              >
+                <span aria-hidden="true">⌖</span>
+                Use My Current Location
+              </button>
+
+            </span>
+
+            <span
+              class="location-status"
+              id="locationStatus"
+              aria-live="polite"
+            ></span>
 
           </label>
 
